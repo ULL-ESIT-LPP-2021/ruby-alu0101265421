@@ -94,3 +94,151 @@ Pregunta 56.
 			2.6.5 :008 > a.concat [7, 8]
 			 => [1, 2, 3, [4, 5, 6], 7, 8] 
 
+Pregunta 57. 
+			2.6.5 :001 > a = [1, 1, 2, 2, 3, 3, 4]
+			 => [1, 1, 2, 2, 3, 3, 4] 
+			2.6.5 :002 > b = [5, 5, 4, 4, 3, 3, 2]
+			 => [5, 5, 4, 4, 3, 3, 2] 
+			2.6.5 :003 > c = a | b
+			 => [1, 2, 3, 4, 5] 
+			2.6.5 :004 > d = b | a
+			 => [5, 4, 3, 2, 1] 
+			2.6.5 :005 > e = a & b
+			 => [2, 3, 4] 
+			2.6.5 :006 > f = b & a
+			 => [4, 3, 2] 
+
+Pregunta 58.
+			2.6.5 :001 > 1 = 1..10
+			 => 1..10 
+			2.6.5 :002 > a.class
+			 => Range 
+			2.6.5 :003 > a.to_a
+			 => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+			2.6.5 :004 > b = 1...10
+			 => 1...10 
+			2.6.5 :005 > b.to_a
+			 => [1, 2, 3, 4, 5, 6, 7, 8, 9] 
+			2.6.5 :006 > b.include? 10
+			 => false 
+			2.6.5 :007 > b.include? 8
+			 => true 
+			2.6.5 :008 > b.step(2) {|x| print "#{x} " }
+			1 3 5 7 9  => 1...10 
+			2.6.5 :009 > 1..3.to_a
+			Traceback (most recent call last):
+			        4: from /home/usuario/.rvm/rubies/ruby-2.6.5/bin/irb:23:in `<main>'
+			        3: from /home/usuario/.rvm/rubies/ruby-2.6.5/bin/irb:23:in `load'
+			        2: from /home/usuario/.rvm/rubies/ruby-2.6.5/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+			        1: from (irb):9
+			NoMethodError (undefined method `to_a' for 3:Integer)
+			Did you mean?  to_c
+			               to_r
+			               to_f
+			               to_i
+			               to_s
+
+Pregunta 59.
+			2.6.5 :011 > r = 0...100
+			 => 0...100 
+			2.6.5 :012 > r.member? 50
+			 => true 
+			2.6.5 :013 > r.include? 99.9 
+			 => true 
+			2.6.5 :014 > r.member? 99.9
+			 => true 
+Pregunta 60.
+			2.6.5 :015 > true.class
+			 => TrueClass 
+			2.6.5 :016 > false.class
+			 => FalseClass 
+			2.6.5 :017 > puts "hello" if 0
+			hello
+			 => nil 
+			2.6.5 :018 > puts "hello" if nil
+			 => nil 
+			2.6.5 :019 > puts "hello" if ""
+			(irb):19: warning: string literal in condition
+			hello
+			 => nil 
+
+Pregunta 61.
+			2.6.5 :020 > x = :sym
+			 => :sym 
+			2.6.5 :021 > x.class
+			 => Symbol 
+			2.6.5 :022 > x == 'sym'
+			 => false 
+			2.6.5 :023 > x == :sym
+			 => true 
+			2.6.5 :024 > z = :'a long symbol'
+			 => :"a long symbol" 
+			2.6.5 :025 > z.class
+			 => Symbol 
+			2.6.5 :026 > x == 'sym'.to_sym
+			 => true 
+			2.6.5 :027 > x.to_s == 'sym'
+			 => true 
+Pregunta 62.
+			2.6.5 :028 > s = "Ruby"
+			 => "Ruby" 
+			2.6.5 :029 > t = s
+			 => "Ruby" 
+			2.6.5 :030 > t[-1] = ""
+			 => "" 
+			2.6.5 :031 > print s
+			Rub => nil 
+			2.6.5 :032 > t = "Java"
+			 => "Java" 
+			2.6.5 :033 > print s, t
+			RubJava => nil 
+Pregunta 63.
+			2.6.5 :034 > "%d %s" % [3, "rubies"]
+			 => "3 rubies"
+
+Pregunta 64.
+			2.6.5 :035 > x, y = 4, 5
+			 => [4, 5] 
+			2.6.5 :036 > z = x > y ? x : y
+			 => 5 
+			2.6.5 :037 > x,y,z = [1,2,3]
+			 => [1, 2, 3] 
+
+
+Pregunta 65.
+			2.6.5 :038 > x = { :a => 1, :b => 2}
+			 => {:a=>1, :b=>2} 
+			2.6.5 :039 > x.keys
+			 => [:a, :b] 
+			2.6.5 :040 > x.values
+			 => [1, 2] 
+			2.6.5 :041 > x[:c] = 3
+			 => 3 
+			2.6.5 :042 > x
+			 => {:a=>1, :b=>2, :c=>3} 
+			2.6.5 :043 > x.delete('a')
+			 => nil 
+			2.6.5 :044 > x
+			 => {:a=>1, :b=>2, :c=>3} 
+			2.6.5 :045 > x.delete(:a)
+			 => 1 
+			2.6.5 :046 > x
+			 => {:b=>2, :c=>3} 
+			2.6.5 :047 > x = { :a => 1, :b => 2, :c => 4 }
+			 => {:a=>1, :b=>2, :c=>4} 
+			2.6.5 :048 > x.delete_if { |k,v| v % 2 == 0 }
+			 => {:a=>1} 
+			2.6.5 :049 > x
+			 => {:a=>1} 
+
+Pregunta 66. La primera sentencia da como resultado vacio  => {}
+La diferencia es que el primero pone el valor vacio, y la segunda pone el valor a nulo
+
+Pregunta 67. Lo que retorna es 
+				2.6.5 :001 > 'hello world, hello LPP'.scan /\w+/
+				 => ["hello", "world", "hello", "LPP"] 
+ 
+
+Pregunta 68. En el codigo hay que cambiar la condicion del while a !=
+		while v != 0
+		    u, v = v, u % v
