@@ -246,3 +246,6 @@ Pregunta 68. En el codigo hay que cambiar la condicion del while a !=
 
 Pregunta clase presencial: ["1","2","3"]+["4","5","6"]  => ["1", "2", "3", "4", "5", "6"] 
 
+
+
+Pregunta clase presencial:  [1,2,3]+[4,5,6]   => [1, 2, 3, 4, 5, 6]
