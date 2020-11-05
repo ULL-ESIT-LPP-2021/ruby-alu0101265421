@@ -242,3 +242,8 @@ Pregunta 67. Lo que retorna es
 Pregunta 68. En el codigo hay que cambiar la condicion del while a !=
 		while v != 0
 		    u, v = v, u % v
+
+
+
+
+Pregunta clase presencial:  [1,2,3]+[4,5,6]   => [1, 2, 3, 4, 5, 6]
